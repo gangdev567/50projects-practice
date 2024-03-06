@@ -9,32 +9,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   overflow: hidden;
   margin: 0;
 }
 
-.container {
+.container1, .container2 {
   display: flex;
-  width: 90vw;
+  flex-direction: column;
+  height: 100vh;
+  width : 50vw;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .panel {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
+  width: 45vw;
+ 
+  flex: 1;
+  flex-direction: column;
   border-radius: 50px;
   color: #fff;
   cursor: pointer;
-  flex: 0.5;
-  margin: 10px;
+  margin: 5px 0;
   position: relative;
   -webkit-transition: all 700ms ease-in;
 }
 
 .panel h3 {
-  font-size: 24px;
+  font-size: 60px;
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -42,11 +47,11 @@ body {
   opacity: 0;
 }
 
-.panel.active {
+.panel.active1, .panel.active2 {
   flex: 5;
 }
 
-.panel.active h3 {
+.panel.active1 h3, .panel.active2 h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
