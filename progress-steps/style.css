@@ -36,18 +36,20 @@ body {
 
 .progress-container::before {
   content: '';
-  background-color: var(--line-border-empty);
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   height: 4px;
   width: 100%;
+  background: linear-gradient(-45deg, var(--line-border-empty) 25%, transparent 25%, transparent 50%, var(--line-border-empty) 50%, var(--line-border-empty) 75%, transparent 75%, transparent);
   z-index: -1;
+  background-size: 10px 10px;
 }
 
 .progress {
-  background-color: var(--line-border-fill);
+  background: linear-gradient(-45deg, var(--line-border-fill) 25%, transparent 25%, transparent 50%, var(--line-border-fill) 50%, var(--line-border-fill) 75%, transparent 75%, transparent);
+  background-size: 10px 10px;
   position: absolute;
   top: 50%;
   left: 0;
