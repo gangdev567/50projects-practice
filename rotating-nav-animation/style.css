@@ -12,17 +12,39 @@ body {
   margin: 0;
 }
 
-.container {
+.container1{
   background-color: #fafafa;
   transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: transform 0.5s linear;
   width: 100vw;
   min-height: 100vh;
   padding: 50px;
+  z-index: 1; /* Ensure that it's above the body content */
 }
 
-.container.show-nav {
+.container2 {
+  background-color: #fafafa;
+  transform-origin: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+  z-index: 2; /* Higher than container1 so it can overlay */
+  transform: translateX(-100%); /* Start off-screen */
+}
+
+.container1.show-nav {
   transform: rotate(-20deg);
+}
+
+.container2.show-nav {
+  transform: rotate(20deg);
 }
 
 .circle-container {
@@ -40,7 +62,7 @@ body {
   transition: transform 0.5s linear;
 }
 
-.container.show-nav .circle {
+.container1.show-nav .circle {
   transform: rotate(-70deg);
 }
 
@@ -68,6 +90,27 @@ body {
   top: 60%;
   transform: rotate(90deg);
   transform-origin: top left;
+}
+
+.navigate {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  height: 50px;
+  width: 150px;
+  background: #ff7979;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  transform: translateY(-30%);
+}
+
+#navigate-left {
+  left: -60px; /* 왼쪽 버튼 위치 조정 */
+}
+
+#navigate-right {
+  right: 0px; /* 오른쪽 버튼 위치 조정 */
 }
 
 .container.show-nav + nav li {
@@ -125,7 +168,7 @@ nav a:hover {
   max-width: 100%;
 }
 
-.content {
+.content, .content {
   max-width: 1000px;
   margin: 50px auto;
 }

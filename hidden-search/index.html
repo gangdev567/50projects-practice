@@ -8,12 +8,15 @@
     <title>Hidden Search</title>
   </head>
   <body>
-    <div class="search">
-      <input type="text" class="input" placeholder="Search...">
-      <button class="btn">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
-    <script src="script.js"></script>
+    <div class="search-container"> <!-- 검색창과 리스트를 분리하는 컨테이너 -->
+      <div class="search">
+         <input type="text" class="input" placeholder="Search...">
+         <button class="btn">
+           <i class="fas fa-search"></i>
+         </button>
+      </div>
+      <ul class="search-results"></ul> <!-- 검색어 리스트를 표시할 요소 -->
+     </div>
+     <script src="script.js"></script>
   </body>
 </html>
